@@ -18,7 +18,7 @@ from sklearn.svm import SVC
 # Укажем путь к файлам проекта:
 # -> $PROJECT_PATH при запуске в Airflow
 # -> иначе - текущая директория при локальном запуске
-path = os.environ.get('PROJECT_PATH', '.')
+path = "/opt/airflow"
 
 
 def filter_data(df: pd.DataFrame) -> pd.DataFrame:

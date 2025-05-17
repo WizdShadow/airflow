@@ -5,11 +5,12 @@ import sys
 from airflow.models import DAG
 from airflow.operators.python import PythonOperator
 
-path = os.path.expanduser('~/airflow_hw')
-# Добавим путь к коду проекта в переменную окружения, чтобы он был доступен python-процессу
-os.environ['PROJECT_PATH'] = path
-# Добавим путь к коду проекта в $PATH, чтобы импортировать функции
-sys.path.insert(0, path)
+dag_path = os.path.dirname(os.path.abspath(__file__))
+# Путь к корню проекта (на уровень выше dags)
+project_path = os.path.join(dag_path, '..')
+
+# Добавляем путь проекта в PYTHONPATH
+sys.path.insert(0, project_path)
 
 from modules.pipeline import pipeline
 from modules.predict import predict
@@ -24,7 +25,7 @@ args = {
 
 with DAG(
         dag_id='car_price_prediction',
-        schedule_interval="00 15 * * *",
+        schedule="00 15 * * *",
         default_args=args,
 ) as dag:
     pipeline = PythonOperator(

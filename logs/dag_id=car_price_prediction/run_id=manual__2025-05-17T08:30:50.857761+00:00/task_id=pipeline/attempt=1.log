@@ -1,0 +1,8 @@
+{"timestamp":"2025-05-17T08:30:55.705839","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-05-17T08:30:55.706414","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/hw_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-05-17T08:30:59.189539Z","level":"info","event":"Task instance is in running state","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-17T08:30:59.190021Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-17T08:30:59.190309Z","level":"info","event":"Current task name:pipeline","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-17T08:30:59.190525Z","level":"info","event":"Dag name:car_price_prediction","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-17T08:31:00.159901","level":"info","event":"model: LogisticRegression, acc_mean: 0.7591, acc_std: 0.0075","logger":"root"}
+{"timestamp":"2025-05-17T08:31:15.268644Z","level":"error","event":"Process terminated by signal","signal":-15,"signal_name":"SIGTERM","logger":"task"}
